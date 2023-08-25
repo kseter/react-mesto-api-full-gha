@@ -1,0 +1,10 @@
+.enter-page__title {
+    color: white;
+    text-align: center;
+    font-family: 'Inter', 'Arial', sans-serif;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 900;
+    line-height: normal;
+    margin: 0;
+}

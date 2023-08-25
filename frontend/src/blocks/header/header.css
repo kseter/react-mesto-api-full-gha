@@ -1,0 +1,18 @@
+.header {
+	margin: 0 auto;
+	padding-top: 45px;
+	max-width: 100%;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	border-bottom: 1px solid rgb(84, 84, 84, .7);
+	/* height: auto;
+	max-height: 10px;
+	overflow: hidden;
+	background: red;
+	transition: max-height 1.5s; */
+}
+
+/* header:hover{
+	max-height: 800px;
+} */

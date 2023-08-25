@@ -1,0 +1,13 @@
+.enter-page__form{
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    margin-top: 77px;
+    min-width: 100%;
+}
+
+@media screen and (max-width: 545px) {
+    .enter-page__form {
+        margin-top: 40px;
+        }
+    }

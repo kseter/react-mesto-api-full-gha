@@ -1,0 +1,30 @@
+.enter-page__input{
+    min-height: 27px;
+    min-width: 100%;
+    padding: 0;
+    background-color: black;
+    border: none;
+    border-bottom: 1px solid grey;
+    color: white;
+    font-family: 'Inter', 'Arial', sans-serif;
+}
+
+::placeholder{
+    color: grey;
+    font-family: 'Inter', 'Arial', sans-serif;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+}
+
+.enter-page__input:focus{
+    outline: none;
+    box-shadow: 0 0 0 1px white;
+    border-radius: 2px;
+}
+
+.enter-page__input:enabled{
+    background-color: black;
+    border: none;
+    border-bottom: 1px solid grey;
+}

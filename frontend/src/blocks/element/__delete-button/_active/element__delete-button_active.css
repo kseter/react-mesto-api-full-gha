@@ -1,0 +1,4 @@
+.element__delete-button_active {
+visibility: visible;
+opacity: 1;
+}

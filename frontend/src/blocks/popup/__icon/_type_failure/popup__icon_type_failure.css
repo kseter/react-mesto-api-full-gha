@@ -1,0 +1,5 @@
+.popup__icon_type_failure{
+    background-image: url('../../../../images/Registration_failure.svg');
+    background-position: center;
+    background-size: contain;
+}

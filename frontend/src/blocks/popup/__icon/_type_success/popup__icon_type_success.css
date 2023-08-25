@@ -1,0 +1,5 @@
+.popup__icon_type_success{
+    background-image: url('../../../../images/Registration_success.svg');
+    background-position: center;
+    background-size: contain;
+}

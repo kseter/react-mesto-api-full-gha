@@ -1,0 +1,22 @@
+.popup__container {
+	display: grid;
+	grid-template-rows: 63px minmax(252px, auto);
+	background-color: white;
+	border-radius: 10px;
+	max-width: 430px;
+	width: 100%;
+	position: relative;
+	box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.15);
+	row-gap: 17px;
+}
+
+
+
+@media screen and (max-width: 545px) {
+	.popup__container {
+		grid-template-rows: 47px minmax(265px, auto);
+		row-gap: 10px;
+		max-width: 282px;
+		margin-top: 0;
+	}
+}

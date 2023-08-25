@@ -1,0 +1,17 @@
+.header__btn_white{
+    font-family: 'Inter', 'Arial', sans-serif;
+    text-align: right;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 22px;
+    border: none;
+    background-color: transparent;
+    color: white;
+}
+
+@media screen and (max-width: 545px) {
+	.header__btn_white {
+		font-size: 14px;
+	}
+}

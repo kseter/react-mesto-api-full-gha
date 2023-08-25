@@ -1,0 +1,17 @@
+.popup__form-item_error_active {
+	opacity: 1;
+	transition: opacity 0.5s;
+	font-family: 'Inter', 'Arial', sans-serif;
+	font-style: normal;
+	font-weight: 400;
+	font-size: 12px;
+	line-height: 15px;
+	color: red;
+	max-width: 358px;
+}
+
+@media screen and (max-width: 545px) {
+	.popup__form {
+		max-width: 238px;
+	}
+}

@@ -1,0 +1,21 @@
+.header__icon{
+    display: none;
+}
+
+@media screen and (max-width: 745px) {
+    .header__icon{
+        display: flex;
+        background-image: url('../../../images/icon_menu.png');
+        width: 44px;
+        height: 44px;
+        padding-bottom: 32px;
+        background-repeat: no-repeat;
+        grid-row-start: 2;
+		grid-row-end: 2;
+        grid-column-start: 3;
+        grid-column-end: 3;
+        /* position: absolute;
+        top: 40px;
+        right: 75px; */
+    }   
+}

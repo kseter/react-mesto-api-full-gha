@@ -1,0 +1,13 @@
+.popup__container_type_infotooltip{
+    max-width: 430px;
+	display: flex;
+	flex-direction: column;
+	background-color: white;
+	align-items: center;
+}
+
+@media screen and (max-width: 545px) {
+	.popup__container_type_infotooltip {
+		max-width: 280px;
+	}
+}

@@ -1,0 +1,26 @@
+@font-face {
+	font-family: 'inter';
+	src: local('Inter'),
+		url(./Inter-Black.woff) format('woff'),
+		url(./Inter-Black.woff2) format('woff2');
+	font-style: normal;
+	font-weight: 900;
+}
+
+@font-face {
+	font-family: 'inter';
+	src: local('Inter'),
+		url(./Inter-Medium.woff) format('woff'),
+		url(./Inter-Medium.woff2) format('woff2');
+	font-style: normal;
+	font-weight: 500;
+}
+
+@font-face {
+	font-family: 'inter';
+	src: local('Inter'),
+		url(./Inter-Regular.woff) format('woff'),
+		url(./Inter-Regular.woff2) format('woff2');
+	font-style: normal;
+	font-weight: 400;
+}
