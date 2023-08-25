@@ -65,7 +65,7 @@ const likeCard = (req, res, next) => {
     { new: true },
   )
     .orFail()
-    .populate(['owner', 'likes'])
+    // .populate(['likes', 'owner'])
     .then((card) => {
       res.status(OK_STATUS).send(card);
     })
