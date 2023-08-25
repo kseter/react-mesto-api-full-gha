@@ -42,7 +42,7 @@ function App() {
 		.then((res) => {
 			if(res){
 				setLoggedIn(true); 
-				setUserEmail(res.data.email); //put email data to the header on '/' page
+				setUserEmail(res.email); //put email data to the header on '/' page
 			}
 		})
 		.catch((err) => {
@@ -110,7 +110,7 @@ function App() {
 	}
 //like&delete cards with btns
 	function handleCardLike(card){
-		const isLiked = card.likes.some(i => i._id === currentUser._id); //check likes from user on the card
+		const isLiked = card.likes.some((id) => id === currentUser._id); //check likes from user on the card
 
 		api.changeLikeCardStatus(card._id, !isLiked)
 		.then((newCard) => {
