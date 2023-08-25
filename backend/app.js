@@ -2,6 +2,7 @@ const bodyParser = require('body-parser');
 const express = require('express');
 const mongoose = require('mongoose');
 const { errors } = require('celebrate');
+const cors = require('cors');
 const router = require('./routes');
 const errorHandler = require('./middlewares/error-handler');
 
@@ -19,6 +20,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(router);
 app.use(errors());
+app.use(cors());
 app.use(errorHandler);
 
 app.listen(PORT, () => {
