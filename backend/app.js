@@ -1,13 +1,13 @@
-require('dotenv').config(); 
+require('dotenv').config();
+// const cors = require('cors');
 const bodyParser = require('body-parser');
 const express = require('express');
 const mongoose = require('mongoose');
 const { errors } = require('celebrate');
-const cors = require('cors');
+const cors = require('./middlewares/cors');
 const router = require('./routes');
 const errorHandler = require('./middlewares/error-handler');
-const { requestLogger, errorLogger } = require('./middlewares/logger'); 
-
+const { requestLogger, errorLogger } = require('./middlewares/logger');
 
 const PORT = 3000;
 
@@ -19,14 +19,14 @@ mongoose.connect('mongodb://127.0.0.1:27017/mestodb', {
 
 const app = express();
 
-app.use(cors());
+app.use(cors);
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(requestLogger);
 
 app.use(router);
 
-app.use(errorLogger); 
+app.use(errorLogger);
 app.use(errors());
 app.use(errorHandler);
 
