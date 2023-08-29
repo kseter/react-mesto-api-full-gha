@@ -11,6 +11,11 @@ const {
 const NotFoundError = require('../errors/not-found-error');
 const auth = require('../middlewares/auth');
 
+app.get('/crash-test', () => {
+  setTimeout(() => {
+    throw new Error('Сервер сейчас упадёт');
+  }, 0);
+}); 
 router.post('/signup', validateSignUp, createUser);
 router.post('/signin', validateSignIn, login);
 router.use(auth);
