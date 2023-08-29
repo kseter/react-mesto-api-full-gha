@@ -1,6 +1,7 @@
 const jwt = require('jsonwebtoken');
+const { JWT_SECRET } = process.env;
 
-const { JWT_KEY = 'secret-key' } = process.env;
+// const { JWT_KEY = 'secret-key' } = process.env;
 const AuthError = require('../errors/auth-error');
 
 module.exports = (req, res, next) => {
@@ -13,7 +14,7 @@ module.exports = (req, res, next) => {
   let payload;
 
   try {
-    payload = jwt.verify(token, JWT_KEY);
+    payload = jwt.verify(token, JWT_SECRET);
   } catch (err) {
     next(new AuthError('Токен не валиден или устарел'));
     return;
