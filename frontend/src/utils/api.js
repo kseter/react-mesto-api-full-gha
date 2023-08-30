@@ -24,7 +24,7 @@ export class Api {
     )
     .then(this._checkResponse);
   };
-   
+
   getInitialCards() {
     const token = localStorage.getItem('jwt');
 
@@ -126,9 +126,9 @@ export class Api {
 
 const api = new Api({
   baseUrl: 'https://api.kseter.mesto.nomoredomainsicu.ru',
+    // baseUrl: 'http://localhost:3000',
 });
 
 export default api
-  
 
- 
+

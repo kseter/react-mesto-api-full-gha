@@ -1,9 +1,10 @@
 export const BASE_URL = 'https://api.kseter.mesto.nomoredomainsicu.ru'
+// export const BASE_URL = 'http://localhost:3000'
 
 export const register = (email, password) => {
     return fetch (`${BASE_URL}/signup`, {
         method: 'POST',
-        headers: 
+        headers:
          {
             'Content-Type': 'application/json'
         },
@@ -43,7 +44,7 @@ export const login = (email, password) => {
 
 export const checkToken = (token) => {
     return fetch (`${BASE_URL}/users/me`, {
-        method: 'GET', 
+        method: 'GET',
         headers: {
             "Content-Type": "application/json",
             "Authorization" : `Bearer ${token}`,

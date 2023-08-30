@@ -3,6 +3,7 @@ const allowedCors = [
   'http://kseter.mesto.nomoredomainsicu.ru/',
   'https://api.kseter.mesto.nomoredomainsicu.ru/',
   'http://api.kseter.mesto.nomoredomainsicu.ru/',
+  'http://localhost:3000/',
 ];
 
 module.exports = (req, res, next) => {
