@@ -52,8 +52,7 @@ export const checkToken = (token) => {
     })
     .then((res) => {
         if (res.ok) {
-          return res
-            // return res.json()
+            return res.json()
         } else if (res.status === 400) {
             throw new Error(`${res.status} — Токен не передан или передан не в том формате`);
         } else if (res.status === 401) {

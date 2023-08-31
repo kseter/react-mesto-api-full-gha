@@ -17,7 +17,7 @@ import InfoTooltip from './InfoTooltip';
 import ProtectedRoute from './ProtectedRoute';
 
 function App() {
-//popups states 
+//popups states
 	const [isEditProfilePopupOpen, setEditProfileOpen] = useState(false);
 	const [isAddPlacePopupOpen, setAddPlacePopupOpen] = useState(false);
 	const [isEditAvatarPopupOpen, setAvatarPopupOpen] = useState(false);
@@ -27,21 +27,21 @@ function App() {
 	const [selectedCard, setSelectedCard] = useState({});
 	const [currentUser, setCurrentUser] = useState({});
 	const [cards, setCards] = useState([]);
-//login&registration states 
+//login&registration states
 	const [loggedIn, setLoggedIn] = useState(false);
 	const [userEmail, setUserEmail] = useState('');
 	const [isSuccessInfoTooltipStatus, setIsSuccessInfoTooltipStatus] = useState(false)
 	const [textInfoTooltip, setTextInfoTooltip] = useState('');
 	const navigate = useNavigate();
-	
-//before page will be loaded 
+
+//before page will be loaded
 
 //check the token
 	const checkToken =(jwt)=> {
 		return authorization.checkToken(jwt)
 		.then((res) => {
 			if(res){
-				setLoggedIn(true); 
+				setLoggedIn(true);
 				setUserEmail(res.email); //put email data to the header on '/' page
 			}
 		})
@@ -54,7 +54,7 @@ function App() {
 		if (loggedIn) {
 			Promise.all([api.requestUserInfo(), api.getInitialCards()])
 				.then(([user, cards]) => {
-					setCurrentUser(user) 
+					setCurrentUser(user)
 					setCards(cards);
 				})
 				.catch((err) => {
@@ -64,7 +64,7 @@ function App() {
 		},[loggedIn]);
 
 	useEffect(() => {
-		const jwt = localStorage.getItem('jwt'); //get the token from the storage 
+		const jwt = localStorage.getItem('jwt'); //get the token from the storage
 		if(jwt) {
 			checkToken(jwt);
 		}
@@ -75,7 +75,7 @@ function App() {
 			navigate('/')
 		}
 	}, [loggedIn]);
-//finctions for to change popup states 
+//finctions for to change popup states
 	function handleEditAvatarClick() {
 		setAvatarPopupOpen(true);
     };
@@ -124,7 +124,7 @@ function App() {
 	function handleCardDelete(card){
 		api.deleteCard(card)
 		.then(() => {
-			setCards((state) => state.filter((c) => c._id !== card._id)); 
+			setCards((state) => state.filter((c) => c._id !== card._id));
 		})
 		.catch((err) => {
 			console.log(err);
@@ -152,18 +152,18 @@ function App() {
 			console.log(err);
 		})
 		}
-//add a new card with button 
+//add a new card with button
 	function handleAddPlaceSubmit(card){
 		api.addNewCard(card)
 		.then((newCard)=> {
-			setCards([newCard, ...cards]); 
+			setCards([newCard, ...cards]);
 			closeAllPopups();
 		})
 		.catch((err) => {
 			console.log(err);
 		})
 	}
-//sign-in 
+//sign-in
 	const onLogin = ({email, password}) => {
 		 return authorization.login(email, password)
 		 .then((res) => {
@@ -173,15 +173,17 @@ function App() {
 				setUserEmail(email);
 				navigate('/')
 			}
-		})	
+		})
 		 .catch((err) => {
-			console.log(err);
+			setIsSuccessInfoTooltipStatus(false)
+			setTextInfoTooltip('Что-то пошло не так!Попробуйте ещё раз.'); //change state for infotooltip text type
+			openInfoTooltip(); //open the infotooltip
 		})
 	};
 //sign-up
 	const onRegister = ({email, password}) => {
 		return authorization.register(email, password)
-		.then(() => { 
+		.then(() => {
 			setIsSuccessInfoTooltipStatus(true)
 			setTextInfoTooltip('Вы успешно зарегистрировались!'); //change state for infotooltip text type
 			openInfoTooltip();
@@ -217,52 +219,52 @@ function App() {
 		<div className="App">
 		<div className="page__container">
 		<Header
-		userEmail={userEmail} 
+		userEmail={userEmail}
 		handleSignOut={handleSignOut}
 		navigateToSignIn={navigateToSignIn}
 		navigateToSignUp={navigateToSignUp}
 		/>
 		<Routes>
-			<Route element={<ProtectedRoute 
+			<Route element={<ProtectedRoute
 			loggedIn={loggedIn}/>}>
-				<Route path='/' 
-				element={<Main 
+				<Route path='/'
+				element={<Main
 					cards={cards}
 					onEditProfile={handleEditProfileClick}
 					onAddPlace={handleAddPlaceClick}
 					onEditAvatar={handleEditAvatarClick}
 					onCardClick={handleCardClick}
 					onCardLike={handleCardLike}
-					onCardDelete={handleCardDelete} 
+					onCardDelete={handleCardDelete}
 					/>} exact/>
 			</Route>
-			<Route 
-				path="/sign-up" 
+			<Route
+				path="/sign-up"
 				element={
-			<Register 
-				onRegister={onRegister} 
+			<Register
+				onRegister={onRegister}
 				handleInfoTooltipOpen={openInfoTooltip}
 		 />} />
 			<Route path="/sign-in"  element={<Login onLogin={onLogin} />}/>
 			<Route path="/*" element={ loggedIn ? <Navigate to="/"replace/> : <Navigate to="/sign-in" replace/>}/>
 		</Routes>
-		<EditProfilePopup 
-		isOpen={isEditProfilePopupOpen} 
+		<EditProfilePopup
+		isOpen={isEditProfilePopupOpen}
 		onClose={closeAllPopups}
 		onUpdateUser={handleUpdateUser}/>
 		<AddPlacePopup
 		isOpen={isAddPlacePopupOpen}
 		onClose={closeAllPopups}
 		onPlaceAdd={handleAddPlaceSubmit}/>
-		<EditAvatarPopup 
+		<EditAvatarPopup
 		isOpen={isEditAvatarPopupOpen}
 		onClose={closeAllPopups}
 		onUpdateAvatar={handleUpdateAvatar}/>
-		<ImagePopup 
+		<ImagePopup
 		card={selectedCard}
 		isOpen={isFullscreenCardOpen}
 		onClose={closeAllPopups}/>
-		<InfoTooltip 
+		<InfoTooltip
 		text={textInfoTooltip}
 		isOpen={isInfoTooltipOpen}
 		onClose={closeAllPopups}
