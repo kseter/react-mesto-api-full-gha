@@ -20,6 +20,7 @@
     "express-winston": "^4.2.0",
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     "i": "^0.3.7",
 <<<<<<< HEAD
     "install": "^0.13.0",
@@ -30,6 +31,8 @@
 =======
     "i": "^0.3.7",
 >>>>>>> e8ee846b4951605b0e0e6bb92944f9f6830dcf14
+=======
+>>>>>>> 796eb0665e164a0e4a2b4bac1d4b9ef8d9b12ac3
     "jsonwebtoken": "^9.0.1",
     "mongoose": "^7.4.1",
     "npm": "^9.8.1",
@@ -38,8 +41,6 @@
   },
   "devDependencies": {
     "eslint": "^8.45.0",
-    "eslint-config-airbnb-base": "^15.0.0",
-    "eslint-plugin-import": "^2.27.5",
     "nodemon": "^3.0.1"
   }
 }
