@@ -9,7 +9,7 @@
 
 ## Ссылки на проект
 
-IP-адрес 158.160.36.82
+IP 158.160.36.82
 
 Frontend https://kseter.mesto.nomoredomainsicu.ru/
 
