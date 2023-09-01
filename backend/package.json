@@ -21,9 +21,12 @@
     "express-winston": "^4.2.0",
 <<<<<<< HEAD
     "i": "^0.3.7",
+<<<<<<< HEAD
     "install": "^0.13.0",
 =======
 >>>>>>> cec4423cd47016fd03fba5e421d7d162069b94f9
+=======
+>>>>>>> parent of cd4ac19... fix: clear dependencies, App height-css, user email after refresh
     "jsonwebtoken": "^9.0.1",
     "mongoose": "^7.4.1",
     "npm": "^9.8.1",
