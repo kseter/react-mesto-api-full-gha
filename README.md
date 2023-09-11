@@ -16,7 +16,7 @@ Designed a one-page site (HTML, CSS, adaptive design). Implemented the ability t
 
 Адаптировать сайт под разные устройства, добавить изображение загрузки страницы. 
 
-To add an adaptive design and pics for page's loading. 
+To add an adaptive design and preloader. 
 
 ## Ссылки на проект | Links
 
